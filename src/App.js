@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {BrowserRouter,Routes, Route} from 'react-router-dom'
+import "bootstrap/dist/css/bootstrap.min.css";
+import Login from './pages/Login'
+import Secret from './pages/Secret'
+import Register from './pages/Register'
+import "react-toastify/dist/ReactToastify.css";
+import ForgetPassword from './pages/Forget-password';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+          <Route exact path="/register" element={<Register></Register>}></Route>
+          <Route exact path="/login" element={<Login></Login>}></Route>
+          <Route exact path="/" element={<Secret></Secret>}></Route>
+          <Route exact path="/forget-password" element={<ForgetPassword></ForgetPassword>}></Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
