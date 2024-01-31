@@ -15,7 +15,6 @@ export default function Secret() {
 
   const [cookies,setCookie, removeCookie] = useCookies([]);
   useEffect(() => {
-    console.log('Running useEffect');
     const verifyUser = async () => {
       if (!cookies.Jwt) {
         navigate('/login');
@@ -25,6 +24,7 @@ export default function Secret() {
         });
   
         const { data } = response;
+        console.log(data);
         if (!data.status) {
           removeCookie("Jwt");
           navigate('/login');
