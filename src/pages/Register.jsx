@@ -27,7 +27,7 @@ export default function Register() {
     const handleSubmit = async (e)=>{
         e.preventDefault();
         try{
-            const { data } = await axios.post("https://jwt-login-auth-backend.onrender.com/register",{
+            const { data } = await axios.post("http://localhost:4000/register",{
                 ...values   
             },{
                 withCredentials:true,

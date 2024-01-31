@@ -20,7 +20,7 @@ export default function Secret() {
       if (!cookies.Jwt) {
         navigate('/login');
       } else {
-        const response = await axios.post("https://jwt-login-auth-backend.onrender.com", {}, {
+        const response = await axios.post("http://localhost:4000", {}, {
           withCredentials: true
         });
   

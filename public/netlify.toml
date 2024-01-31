@@ -1,6 +1,6 @@
 [[redirects]]
 from = "/* "
-to = “https://jwt-login-auth-backend.onrender.com 10”
+to = “http://localhost:4000 10”
 status = 200
 force = true
 headers = {Access-Control-Allow-Origin: “*”}
