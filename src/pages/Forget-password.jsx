@@ -32,7 +32,7 @@ export default function ForgetPassword() {
             const { data } = await axios.post("https://jwt-login-auth-backend.onrender.com/forget-password",{
                 ...values   
             },{
-                withCredentials:true,
+                credentials:'inlcude',
             });
 
             if(data){

@@ -34,7 +34,7 @@ export default function Login() {
             const { data } = await axios.post("https://jwt-login-auth-backend.onrender.com/login",{
                 ...values   
             },{
-                withCredentials:true,
+                credentials:'inlcude',
             });
 
             if(data){
