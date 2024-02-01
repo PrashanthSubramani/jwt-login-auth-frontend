@@ -23,7 +23,7 @@ export default function Secret() {
       } else {
         try {
           const response = await axios.post("http://localhost:4000", {}, {
-            credentials:true,
+            credentials: 'include' 
           });
   
           const { data } = response;

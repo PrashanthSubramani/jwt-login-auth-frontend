@@ -34,7 +34,7 @@ export default function Login() {
             const { data } = await axios.post("http://localhost:4000/login",{
                 ...values   
             },{
-                credentials:true,
+                credentials:'include',
             });
 
             if(data){
