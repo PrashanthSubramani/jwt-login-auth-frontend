@@ -15,27 +15,28 @@ export default function Secret() {
 
   const [cookies,setCookie, removeCookie] = useCookies([]);
   useEffect(() => {
-    const verifyUser = async () => {
-      console.log(cookies.Jwt);
-      if (!cookies.Jwt) {
-        navigate('/login');
-      } else {
-        const response = await axios.post("https://jwt-login-auth-backend.onrender.com", {}, {
-          credentials: 'inlcude'
-        });
+    console('useEffect is running');
+    console.log(cookies.Jwt);
+    // const verifyUser = async () => {
+    //   if (!cookies.Jwt) {
+    //     navigate('/login');
+    //   } else {
+    //     const response = await axios.post("https://jwt-login-auth-backend.onrender.com", {}, {
+    //       credentials: 'inlcude'
+    //     });
   
-        const { data } = response;
+    //     const { data } = response;
  
-        if (!data.status) {
-          removeCookie("Jwt");
-          navigate('/login');
-        } else {
-          toast(`Hello ${data.user}`, { theme: "dark" });
-        }
-      }
-    };
+    //     if (!data.status) {
+    //       removeCookie("Jwt");
+    //       navigate('/login');
+    //     } else {
+    //       toast(`Hello ${data.user}`, { theme: "dark" });
+    //     }
+    //   }
+    // };
   
-    verifyUser();
+    // verifyUser();
   }, [cookies, navigate, removeCookie]);
 
 
