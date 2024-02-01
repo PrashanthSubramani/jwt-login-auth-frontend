@@ -26,7 +26,7 @@ export default function Secret() {
           navigate('/login');
         } else {
           try {
-            const response = await axios.post("https://jwt-login-auth-backend.onrender.com", {}, {
+            const response = await axios.post("https://jwt-login-auth-backend.onrender.com", {token:cookie}, {
               withCredentials: true 
             });
   
