@@ -14,11 +14,15 @@ export default function Secret() {
   const navigate = useNavigate();
 
   const [cookies, setCookie, removeCookie] = useCookies(['Jwt']);
+
+
   useEffect(() => {
     console.log('useEffect is running');
-      console.log(cookies);
+
       const verifyUser = async () => {
         if (!cookies.Jwt) {
+          
+          console.log(cookies.Jwt);
           navigate('/login');
         } else {
           try {
@@ -41,7 +45,6 @@ export default function Secret() {
       };
       verifyUser();
   }, [cookies, navigate, removeCookie]);
-
 
   const logout = ()=>{
     removeCookie('Jwt');
