@@ -24,13 +24,12 @@ export default function Secret() {
         });
   
         const { data } = response;
-        console.log(data);
-        // if (!data.status) {
-        //   removeCookie("Jwt");
-        //   navigate('/login');
-        // } else {
-        //   toast(`Hello ${data.user}`, { theme: "dark" });
-        // }
+        if (!data.status) {
+          removeCookie("Jwt");
+          navigate('/login');
+        } else {
+          toast(`Hello ${data.user}`, { theme: "dark" });
+        }
       }
     };
   
@@ -47,16 +46,6 @@ export default function Secret() {
   <>
       <Navbar className="bg-body-tertiary justify-content-between">
         <h5 className='ms-3'>AUTH LOGIN USING JWT</h5>
-      {/* <Form inline>
-        <InputGroup>
-          <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-          <Form.Control
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
-        </InputGroup>
-      </Form> */}
       <Form inline>
         <Row>
           <Col xs="auto">
