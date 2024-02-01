@@ -22,7 +22,7 @@ export default function Secret() {
         navigate('/login');
       } else {
         try {
-          const response = await axios.post("https://jwt-login-auth-backend.onrender.com", {}, {
+          const response = await axios.post("http://localhost:4000", {}, {
             credentials: 'include' // Corrected typo
           });
   
