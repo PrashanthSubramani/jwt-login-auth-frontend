@@ -16,31 +16,34 @@ export default function Secret() {
   const [cookies,setCookie, removeCookie] = useCookies([]);
   useEffect(() => {
     console.log('useEffect is running');
-    console.log(cookies);
-    const verifyUser = async () => {
-      if (!cookies.Jwt) {
-        navigate('/login');
-      } else {
-        try {
-          const response = await axios.post("https://jwt-login-auth-backend.onrender.com", {}, {
-            withCredentials: true 
-          });
   
-          const { data } = response;
+    if (cookies.Jwt !== undefined) {
+      console.log(cookies);
+      const verifyUser = async () => {
+        if (!cookies.Jwt) {
+          navigate('/login');
+        } else {
+          try {
+            const response = await axios.post("https://jwt-login-auth-backend.onrender.com", {}, {
+              withCredentials: true 
+            });
   
-          if (!data.status) {
-            removeCookie("Jwt");
-            navigate('/login');
-          } else {
-            toast(`Hello ${data.user}`, { theme: "dark" });
+            const { data } = response;
+  
+            if (!data.status) {
+              removeCookie("Jwt");
+              navigate('/login');
+            } else {
+              toast(`Hello ${data.user}`, { theme: "dark" });
+            }
+          } catch (error) {
+            console.error("Error verifying user:", error);
           }
-        } catch (error) {
-          console.error("Error verifying user:", error);
         }
-      }
-    };
+      };
   
-    verifyUser();
+      verifyUser();
+    }
   }, [cookies, navigate, removeCookie]);
 
 
