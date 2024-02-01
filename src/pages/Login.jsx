@@ -45,6 +45,7 @@ export default function Login() {
                 }else{
                     generateSuccess("Login Successfully");
                     setDisableBtn(true);
+                    localStorage.setItem('_token', data._token );
                     setTimeout(() => {
                         navigate('/');
                       }, "2000");

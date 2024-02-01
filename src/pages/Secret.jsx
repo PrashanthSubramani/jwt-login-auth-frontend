@@ -20,9 +20,9 @@ export default function Secret() {
     console.log('useEffect is running');
 
       const verifyUser = async () => {
-        if (!cookies.Jwt) {
-          
-          console.log(cookies.Jwt);
+       const cookie =  localStorage.getItem('_token');
+
+        if (!cookie) {
           navigate('/login');
         } else {
           try {
@@ -33,7 +33,7 @@ export default function Secret() {
             const { data } = response;
   
             if (!data.status) {
-              removeCookie("Jwt");
+              localStorage.removeItem('_token');
               navigate('/login');
             } else {
               toast(`Hello ${data.user}`, { theme: "dark" });
