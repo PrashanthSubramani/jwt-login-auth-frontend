@@ -23,7 +23,7 @@ export default function Secret() {
       } else {
         try {
           const response = await axios.post("https://jwt-login-auth-backend.onrender.com", {}, {
-            credentials: 'include' 
+            withCredentials: true 
           });
   
           const { data } = response;

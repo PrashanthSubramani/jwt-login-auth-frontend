@@ -30,7 +30,7 @@ export default function Register() {
             const { data } = await axios.post("https://jwt-login-auth-backend.onrender.com/register",{
                 ...values   
             },{
-                credentials:'inlcude',
+                withCredentials: true
             });
 
             if(data){
