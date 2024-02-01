@@ -47,7 +47,7 @@ export default function Secret() {
   }, [cookies, navigate, removeCookie]);
 
   const logout = ()=>{
-    removeCookie('Jwt');
+    localStorage.removeItem('_token');
     navigate('/login');
   }
 
