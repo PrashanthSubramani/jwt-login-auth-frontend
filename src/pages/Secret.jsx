@@ -24,6 +24,7 @@ export default function Secret() {
         });
   
         const { data } = response;
+        console.lof(data);
         if (!data.status) {
           removeCookie("Jwt");
           navigate('/login');

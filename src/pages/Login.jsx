@@ -45,10 +45,9 @@ export default function Login() {
                 }else{
                     generateSuccess("Login Successfully");
                     setDisableBtn(true);
-                    console.log(data);
-                    // setTimeout(() => {
-                    //     navigate('/');
-                    //   }, "2000");
+                    setTimeout(() => {
+                        navigate('/');
+                      }, "2000");
                 }
             }
         }catch(err){
