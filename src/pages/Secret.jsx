@@ -25,12 +25,12 @@ export default function Secret() {
   
         const { data } = response;
         console.log(data);
-        if (!data.status) {
-          removeCookie("Jwt");
-          navigate('/login');
-        } else {
-          toast(`Hello ${data.user}`, { theme: "dark" });
-        }
+        // if (!data.status) {
+        //   removeCookie("Jwt");
+        //   navigate('/login');
+        // } else {
+        //   toast(`Hello ${data.user}`, { theme: "dark" });
+        // }
       }
     };
   
