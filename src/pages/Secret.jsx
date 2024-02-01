@@ -16,7 +16,7 @@ export default function Secret() {
   const [cookies,setCookie, removeCookie] = useCookies([]);
   useEffect(() => {
     console.log('useEffect is running');
-    console.log(cookies.Jwt);
+    console.log(cookies);
     const verifyUser = async () => {
       if (!cookies.Jwt) {
         navigate('/login');
