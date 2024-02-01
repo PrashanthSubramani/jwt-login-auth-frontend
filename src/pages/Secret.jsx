@@ -39,14 +39,7 @@ export default function Secret() {
           }
         }
       };
-      setTimeout(
-        function() {
-          verifyUser();
-        }
-        .bind(this),
-        3000
-    );
-
+      verifyUser();
   }, [cookies, navigate, removeCookie]);
 
 
