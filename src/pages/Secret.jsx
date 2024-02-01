@@ -13,7 +13,7 @@ export default function Secret() {
   
   const navigate = useNavigate();
 
-  const [cookies,setCookie, removeCookie] = useCookies([]);
+  const [cookies, setCookie, removeCookie] = useCookies(['Jwt']);
   useEffect(() => {
     console.log('useEffect is running');
       console.log(cookies);
